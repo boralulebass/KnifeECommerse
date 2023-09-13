@@ -1,0 +1,45 @@
+﻿@using EntityLayer.Concrete;
+@using System.Globalization;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model IPagedList<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<div class="content">
+    <h2>Ürün Listesi</h2>
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>Görsel</th>
+            <th>Ürün Adı</th>
+            <th>Açıklaması</th>
+            <th>Fiyatı</th>
+            <th>Kategorisi</th>
+            <th>Eklenme Tarihi</th>
+            <th>Listelenme Sırası</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> <img src="@item.ProductImg" style="height:70px; width:70px;">  </td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductDescription.Substring(0,10)</td>
+                <td>@item.ProductPrice.ToString("C", new CultureInfo("tr-TR"))</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@(((DateTime)item.ProductDate).ToString("dd-MMM-yyyy"))</td>
+                <td>@item.ProductOrder</td>
+                <td><a href="/AdminProduct/EditProduct/@item.ProductID" class="btn btn-outline-success">Düzenle</a></td>
+                <td><a href="/AdminProduct/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+    <br />
+    <a href="/AdminProduct/AddProduct/" class="btn btn-primary">Yeni Ürün Ekle</a>
+</div>

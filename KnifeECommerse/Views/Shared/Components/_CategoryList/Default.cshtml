@@ -1,0 +1,18 @@
+﻿@using EntityLayer.Concrete;
+@model List<Category>
+<div class="col-sm-6 col-lg-3 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30">
+        KATEGORİLER
+    </h4>
+
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li class="p-b-10">
+                <a href="/surmenebicaklari/@item.CategoryID" class="stext-107 cl7 hov-cl1 trans-04">
+                    @item.CategoryName
+                </a>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,87 @@
+﻿@using EntityLayer.Concrete;
+@model List<Category>
+@{
+    string category = "Tüm Ürünler";
+    string filter = "*";
+    string categoryPicker = "Kategori Seç";
+    if (ViewBag.id > 0) { category = ViewBag.v; filter = "." + ViewBag.id; categoryPicker = ViewBag.v; }
+}
+<div class="dropdown">
+    <button class="dropbtn">@categoryPicker</button>
+    <div class="dropdown-content">
+        @if (ViewBag.id > 0)
+        {
+
+                <a style="text-align:left; color:midnightblue" href="/surmenebicaklari">Tüm Ürünler</a>
+
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <button style="text-align:left;" data-filter=".@item.CategoryID">@item.CategoryName</button>
+            }
+        }
+    </div>
+</div>
+
+<style>
+    .dropbtn {
+        background-color: transparent;
+        color: black;
+        padding: 10px;
+        font-size: 13px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        transition: background-color 0.3s ease;
+    }
+
+        .dropbtn:hover {
+            background-color: #f1f1f1;
+        }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        text-align: left;
+        border-radius: 0px;
+        padding: 8px 0;
+    }
+
+        .dropdown-content button {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+            .dropdown-content button:hover {
+                background-color: #f1f1f1;
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #7E79D1;
+        color: white;
+    }
+</style>
+

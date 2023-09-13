@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete;
+@model HomePhotos
+@{
+    ViewData["Title"] = "HomePhotos";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <h2>Ana Sayfa Fotoğraf ve Başlıklar Düzenleme Sayfası</h2>
+        <br />
+        <input type="hidden" asp-for="HomePhotosID" />
+        <label>1. Başlık</label>
+        <input type="text" asp-for="HomeTitle1" class="form-control" required />
+        <br />
+        <label>1. Büyük Başlık</label>
+        <input type="text" rows="8" asp-for="HomeDesc1" class="form-control" required />
+        <br />
+        <label>1. Buton Yazısı</label>
+        <input type="text" rows="8" asp-for="HomeButton1" class="form-control" required />
+        <br />
+        <hr />
+        <label>2. Başlık</label>
+        <input type="text" asp-for="HomeTitle2" class="form-control" required />
+        <br />
+        <label>2. Büyük Başlık</label>
+        <input type="text" rows="8" asp-for="HomeDesc2" class="form-control" required />
+        <br />
+        <label>2. Buton Yazısı</label>
+        <input type="text" rows="8" asp-for="HomeButton2" class="form-control" required />
+        <br />
+        <hr />
+        <label>3. Başlık</label>
+        <input type="text" asp-for="HomeTitle3" class="form-control" required />
+        <br />
+        <label>3. Büyük Başlık</label>
+        <input type="text" rows="8" asp-for="HomeDesc3" class="form-control" required />
+        <br />
+        <label>3. Buton Yazısı</label>
+        <input type="text" rows="8" asp-for="HomeButton3" class="form-control" required />
+        <br />
+        <button class="btn btn-outline-primary">Değişiklikleri Kaydet</button>
+        <br />
+        <br />
+    </div>
+</form>

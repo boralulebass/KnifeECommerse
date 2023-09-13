@@ -1,0 +1,49 @@
+﻿@using EntityLayer.Concrete;
+@model Contact
+<div class="flex-w w-full p-b-42">
+	<span class="fs-18 cl5 txt-center size-211">
+		<span class="lnr lnr-map-marker"></span>
+	</span>
+
+	<div class="size-212 p-t-2">
+		<span class="mtext-110 cl2">
+			Adresimiz
+		</span>
+
+		<p class="stext-115 cl6 size-213 p-t-18">
+			@Model.Address
+		</p>
+	</div>
+</div>
+
+<div class="flex-w w-full p-b-42">
+	<span class="fs-18 cl5 txt-center size-211">
+		<span class="lnr lnr-phone-handset"></span>
+	</span>
+
+	<div class="size-212 p-t-2">
+		<span class="mtext-110 cl2">
+			Bizi Arayın
+		</span>
+
+		<p class="stext-115 cl1 size-213 p-t-18">
+			+@Model.Phone
+		</p>
+	</div>
+</div>
+
+<div class="flex-w w-full">
+	<span class="fs-18 cl5 txt-center size-211">
+		<span class="lnr lnr-envelope"></span>
+	</span>
+
+	<div class="size-212 p-t-2">
+		<span class="mtext-110 cl2">
+			Bize Mail Atın
+		</span>
+
+		<p class="stext-115 cl1 size-213 p-t-18">
+			@Model.Email
+		</p>
+	</div>
+</div>

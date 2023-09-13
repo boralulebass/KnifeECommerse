@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/cozastore-master/images/aboutwallpaper.jfif');">
+	<h2 class="ltext-105 cl0 txt-center">
+		İletişim
+	</h2>
+</section>
+
+
+<!-- Content page -->
+<section class="bg0 p-t-104 p-b-116">
+	<div class="container">
+		<div class="flex-w flex-tr">
+			<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+				@await Html.PartialAsync("/Views/Contact/Contact.cshtml")
+			</div>
+
+			<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+				@await Component.InvokeAsync("_ContactInfos")
+			</div>
+		</div>
+	</div>
+	<!-- Map -->
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1507.5780676395964!2d40.114522252741246!3d40.91232231968795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4065d3997cc20d3b%3A0xde1f5f44c6ee871b!2zVmlyYSBTw7xybWVuZSBCxLHDp2Frw6fEsWzEsWs!5e0!3m2!1str!2str!4v1689088328138!5m2!1str!2str" width="1280" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+
+</section>

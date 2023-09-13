@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model IPagedList<ContactClient>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<br />
+<div class="content">
+    <h2>Mesaj Listesi</h2>
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>E-Posta Adresi</th>
+            <th>Mesaj</th>
+            <th>Tarih</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmailAddress</td>
+                <td>@item.Description</td>
+                <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                <td><a href="/AdminContactMessage/DeleteContactMessage/@item.ContactClientID" class="btn btn-outline-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+
+    <br />
+</div>

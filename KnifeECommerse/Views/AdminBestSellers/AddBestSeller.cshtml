@@ -1,0 +1,17 @@
+﻿@using EntityLayer.Concrete;
+@model BestSeller
+@{
+    ViewData["Title"] = "AddBestSeller";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <h2>En Çok Satanlar Ürün Ekleme Sayfası</h2>
+        <br />
+        <label>Ürün Adı</label>
+        @Html.DropDownListFor(x=>x.ProductID,(List<SelectListItem>)ViewBag.v, new {@class="form-control"})
+        <br />
+        <button class="btn btn-outline-primary">Ekle</button>
+    </div>
+</form>

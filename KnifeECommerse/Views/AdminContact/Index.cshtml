@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concrete;
+@model Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <h2>İletişim Kısmı Düzenleme Sayfası</h2>
+        <br />
+        <input type="hidden" asp-for="ContactID" />
+        <label>E-Posta Adresiniz</label>
+        <input type="email" asp-for="Email" class="form-control" required />
+        <br />
+        <label>Telefon Numaranız</label>
+        <input type="text" asp-for="Phone" class="form-control" placeholder="Örn:905446742323" required />
+        <br />
+        <label>Adresiniz</label>
+        <textarea type="text" rows="3" asp-for="Address" class="form-control" required></textarea>
+        <br />
+        <button class="btn btn-outline-primary">Değişiklikleri Kaydet</button>
+    </div>
+</form>

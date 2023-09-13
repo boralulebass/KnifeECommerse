@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concrete;
+@model Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <h2>Ürün Ekleme Sayfası</h2>
+        <br />
+        <label>Ürün Adı</label>
+        <input type="text" asp-for="ProductName" class="form-control" required />
+        <br />
+        <label>Kategori</label>
+        @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.v, new {@class="form-control"}) 
+        <br />
+        <label>Ürün Açıklaması</label>
+        <textarea type="text" asp-for="ProductDescription" class="form-control" required placeholder="En az 10 karakter girişi yapınız."></textarea>
+        <br />
+        <label>Ürün Fiyatı</label>
+        <input type="text" asp-for="ProductPrice" class="form-control" required placeholder="Örn:1250,99" />
+        <br />
+        <label>Ürün Eski Fiyatı (İndirim Varsa)</label>
+        <input type="text" asp-for="ProductOldPrice" class="form-control" required placeholder="İndirim yoksa 0 yazınız." />
+        <br />
+        <label>Ürün Resim Yolu</label> <br />
+        <span><a href="https://freeimage.host/" target="_blank">Bu adrese</a> gidip "Yükle" butonundan fotoğrafınızı yükleyin. Yükledikten sonra fotoğrafınızı siteden açıp sağ tıklayın. "Resim Adresini Kopyala" seçeneğine tıklayın ve buraya yapıştırın.</span>
+        <input type="url" asp-for="ProductImg" class="form-control" required/>
+        <br />
+        <label>Ürün Listelenme Sırası</label>
+        <input type="number" asp-for="ProductOrder" class="form-control" required />
+        <br />
+        <button class="btn btn-outline-primary">Ekle</button>
+    </div>
+</form>
+

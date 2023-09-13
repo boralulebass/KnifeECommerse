@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete;
+@model About
+<div class="tab01">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item p-b-10">
+            <a class="nav-link active" data-toggle="tab" href="#revieww" role="tab">@Model.AboutTitle</a>
+        </li>
+        <li class="nav-item p-b-10">
+            <a class="nav-link" data-toggle="tab" href="#review" role="tab">@Model.AboutTitle2</a>
+        </li>
+    </ul>
+    <div class="tab-content p-t-43">
+        <!-- - -->
+        <div class="tab-pane fade show active" id="revieww" role="tabpanel">
+            <div class="how-pos2 p-lr-15-md">
+                <p class="stext-102 cl6">
+                    @Model.AboutDescription
+                </p>
+            </div>
+        </div>
+        <!-- - -->
+        <div class="tab-pane fade show" id="review" role="tabpanel">
+            <div class="how-pos2 p-lr-15-md">
+                <p class="stext-102 cl6">
+                    @Model.AboutDescription2
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

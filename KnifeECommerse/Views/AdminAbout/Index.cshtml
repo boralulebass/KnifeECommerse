@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete;
+@model About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <h2>Hakkında Kısmı Düzenleme Sayfası</h2>
+        <br />
+        <input type="hidden" asp-for="AboutID" />
+        <label>1. Başlık</label>
+        <input type="text" asp-for="AboutTitle" class="form-control" required />
+        <br />
+        <label>1. Açıklama</label>
+        <textarea type="text" rows="8" asp-for="AboutDescription" class="form-control" required></textarea>
+        <br />
+        <label>2. Başlık</label>
+        <input type="text" asp-for="AboutTitle2" class="form-control" required />
+        <br />
+        <label>2. Açıklama</label>
+        <textarea type="text" rows="8" asp-for="AboutDescription2" class="form-control" required></textarea>
+        <br />
+        <button class="btn btn-outline-primary">Değişiklikleri Kaydet</button>
+    </div>
+</form>

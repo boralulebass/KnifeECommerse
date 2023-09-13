@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete;
+@model List<BestSeller>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<br />
+<div class="content">
+    <h2>En Çok Satan Ürünler Listesi</h2>
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>Ürün Adı</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Product.ProductName</td>
+                <td><a href="/AdminBestSellers/DeleteBestSeller/@item.BestSellerID" class="btn btn-outline-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+    <br />
+    <a href="/AdminBestSellers/AddBestSeller/" class="btn btn-primary">En Çok Satanlara Ürün Ekle</a>
+</div>
