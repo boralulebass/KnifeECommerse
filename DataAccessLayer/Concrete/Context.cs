@@ -12,8 +12,8 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=77.245.159.27\\MSSQLSERVER2019;initial Catalog=DbKnifeECom;user=viraadmindb;password=4e882Ccw?");
-            //optionsBuilder.UseSqlServer("Server=DESKTOP-D0HPTG1\\SQLEXPRESS01;initial Catalog=DbKnifeECom;integrated security=true");
+            
+            optionsBuilder.UseSqlServer("Server=DESKTOP-D0HPTG1\\SQLEXPRESS01;initial Catalog=DbKnifeECom;integrated security=true");
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
